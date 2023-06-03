@@ -3,7 +3,6 @@ $(function () {
     var confirmBtn = $('#confirmBtn');
     var placeName = inputEl.textContent;
     var printName = $('#locCheck');
-    var APIKey = '05f46a74c28156c7a4309df0e0f810d4';
     var town = localStorage.getItem('placeName', placeName);
 
 
@@ -21,7 +20,21 @@ $(function () {
 
     }
     printSelected();
-    var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + town + '&appid=' + APIKey;
 
-    fetch(queryURL)
+    var APIKey = '05f46a74c28156c7a4309df0e0f810d4';
+    fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + town + '&limit=5&appid=' + APIKey)
+        .then(function (response) { return response.json() })
+        .then(function (locationData) {
+            var lat;
+            var lon;
+            
+            var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + town + '&appid=' + APIKey;
+
+            fetch(queryURL)
+                .then(function (response) { return response.json(); })
+                .then(function (locationData) {
+                    var lat = locationData[0].lat;
+                    //idk from here
+                })
+        })
 });
