@@ -1,9 +1,8 @@
-var confirmBtn = $('#confirmLocal');
+var confirmBtn = $('#confirmBtn');
 var inputLocation = $('#inputLocal');
 
 confirmBtn.on('click', function () {
-    var btnEl = 
-    btnEl.val() = inputLocation.val();
-    // $('buttonContainer').append(btnEl);
+    var typedLocal = inputLocation.val();
+    localStorage.setItem('typedLocal', typedLocal);
 
 });

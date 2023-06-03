@@ -23,34 +23,27 @@
 
     <main>
       <section class="locationPicker">
-        <form class="row g-3">
-          <section class="col-auto">
-            <label for="staticWhere" class="visually-hidden">Location</label>
-            <input
-              type="text"
-              readonly
-              class="form-control-plaintext"
-              id="staticWhere"
-              value="Weather location"
-            />
-          </section>
-          <section class="col-auto">
-            <label for="inputLocal" class="visually-hidden">Locatiion</label>
-            <input
-              type="location"
-              class="form-control"
-              id="inputLocal"
-              placeholder="Location"
-            />
-          </section>
-          <section class="col-auto">
-            <button class="btn btn-primary mb-3" id="confirmLocal">
-              Confirm Location
-            </button>
-          </section>
+        <form>
+          <label for="location" id="locationLabel">Location:</label><br />
+          <input type="text" id="submitedLocation" name="location" />
         </form>
+        <button id="confirmBtn">Get Weather</button>
       </section>
-      <section class="buttonContainer"></section>
+
+      <section class="buttonContainer">
+        <section id="buttons"></section>
+        <section class="weatherDisplay">
+          <section class="container">
+            <section class="row">
+              <section class="col">date1</section>
+              <section class="col">date2</section>
+              <section class="col">date3</section>
+              <section class="col">date4</section>
+              <section class="col">date5</section>
+            </section>
+          </section>
+        </section>
+      </section>
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

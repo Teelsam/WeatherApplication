@@ -1,5 +1,5 @@
-html {
-    background-color:gainsboro;
+html {/*Sets the page background color*/
+    background-color:rgb(55, 139, 248);
 
 }
 #siteH1{
@@ -10,8 +10,20 @@ html {
    background-color: darkblue;
    height: 100px;
    padding-top: 50px;
-   
-  
+}
+form{
+    display: inline;
     
-
+}
+#locationLabel{
+    font-size: larger;
+    font-weight: 700;
+}
+#confirmBtn{
+    display: inline;
+    background-color: aquamarine;
+    border-radius: 5px;
+}
+#confirmBtn:hover{
+    background-color: gold;
 }
