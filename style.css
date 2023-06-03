@@ -1,0 +1,17 @@
+html {
+    background-color:gainsboro;
+
+}
+#siteH1{
+    display: flex;
+    text-align: center;
+   justify-content: center;
+   color:aquamarine;
+   background-color: darkblue;
+   height: 100px;
+   padding-top: 50px;
+   
+  
+    
+
+}
