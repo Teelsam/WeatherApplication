@@ -3,6 +3,8 @@ $(function () {
     var confirmBtn = $('#confirmBtn');
     var placeName = inputEl.textContent;
     var printName = $('#locCheck');
+    var APIKey = '05f46a74c28156c7a4309df0e0f810d4';
+    var town = localStorage.getItem('placeName', placeName);
 
 
     confirmBtn.on('click', function (event) {
@@ -19,6 +21,7 @@ $(function () {
 
     }
     printSelected();
+    var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + town + '&appid=' + APIKey;
 
-
+    fetch(queryURL)
 });
