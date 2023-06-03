@@ -15,11 +15,14 @@ form{
     display: inline;
     
 }
-#locationLabel{
+#locCheck{
+    background-color: darkgreen;
+    color:chartreuse;
     font-size: larger;
-    font-weight: 700;
+    border: 3px;
 }
 #confirmBtn{
+    margin-top: -10px;
     display: inline;
     background-color: aquamarine;
     border-radius: 5px;
