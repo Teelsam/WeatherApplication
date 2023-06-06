@@ -11,8 +11,18 @@ $(function () {
         event.preventDefault();
         placeName = inputEl.val();
         localStorage.setItem('placeName', placeName);
-        printSelected();
-        searchHis();
+
+        if (placeName = localStorage.getItem('placeName', placeName)) {
+            console.log('place searched is already in history');
+            if (counter < 4) {
+                counter++;
+                printSelected();
+                searchHis();
+            }
+        }
+        else if (counter > 4) {
+            console.log('Only four cities at a time please');
+        }
         console.log('counter: ' + counter);
     });
     function printSelected() {
@@ -33,9 +43,10 @@ $(function () {
         $('#buttons').children().eq(1).attr('id', 'town1');
         $('#buttons').children().eq(2).attr('id', 'town2');
         $('#buttons').children().eq(3).attr('id', 'town3');
+        $('#buttons').children().eq(4).attr('id', 'town4');
     }
     function loadfromHis() {
-
+        $('#buttons').children()
     }
     town1.on('click', loadfromHis);
     // var APIKey = '05f46a74c28156c7a4309df0e0f810d4';
