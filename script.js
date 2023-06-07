@@ -96,7 +96,9 @@ $(function () {
                 .then(function (weatherData) {
                     console.log(weatherData);
                     bigDate.text(town + ', ' + fullTime);
-                    symbol0.text(weatherData.weather.icon);
+                    var icon = (weatherData.weather[0].icon);
+                    console.log('this is icon: ' + icon);
+                    symbol0.attr('src', './icon/{icon}.png'); //loads the icon
                     temp0.text('Temp: ' + weatherData.main.temp + '°C');
                     wind0.text('Wind: ' + weatherData.wind.speed + "MPH");
                     hum0.text('Humidity: ' + weatherData.main.humidity + '%');
