@@ -9,30 +9,50 @@ $(function () {
     var town = localStorage.getItem('placeName', placeName);
     var bigWeather = $('#bigWeather');
     var bigDate = $('#bigDate');
+    var weatherIcon = $('#weatherIcon');
+
+
     var symbol0 = $('symbol0');
     var temp0 = $('#temp0');
     var wind0 = $('#wind0');
     var hum0 = $('#hum0');
+
+    var dateHead1 = $('#dateHead1');
+    var symbol1 = $('symbol0');
     var temp1 = $('#temp0');
     var wind1 = $('#wind0');
     var hum1 = $('#hum0');
+
+    var dateHead2 = $('#dateHead2');
+    var symbol2 = $('symbol0');
     var temp2 = $('#temp0');
     var wind2 = $('#wind0');
     var hum2 = $('#hum0');
+
+    var dateHead3 = $('#dateHead3');
+    var symbol3 = $('symbol0');
     var temp3 = $('#temp0');
     var wind3 = $('#wind0');
     var hum3 = $('#hum0');
+
+    var dateHead4 = $('#dateHead4');
+    var symbol4 = $('symbol0');
     var temp4 = $('#temp0');
     var wind4 = $('#wind0');
     var hum4 = $('#hum0');
+
+    var dateHead5 = $('#dateHead5');
+    var symbol5 = $('symbol0');
     var temp5 = $('#temp0');
     var wind5 = $('#wind0');
     var hum5 = $('#hum0');
+
     var date1 = $('#date1');
     var date2 = $('#date2');
     var date3 = $('#date3');
     var date4 = $('#date4');
     var date5 = $('#date5');
+
     var time = dayjs().format("MMM DD");
     var fullTime = dayjs().format('MMM DD, YYYY');
     var displayTime = $('#time');
@@ -96,16 +116,43 @@ $(function () {
                 .then(function (weatherData) {
                     console.log(weatherData);
                     bigDate.text(town + ', ' + fullTime);
+
+                   function iconPicker(weatherData){
                     var icon = (weatherData.weather[0].icon);
                     console.log('this is icon: ' + icon);
-                    symbol0.attr('src', './icon/{icon}.png'); //loads the icon
+                    if(icon='01d'){
+                        
+                    }
+
+                   }
                     temp0.text('Temp: ' + weatherData.main.temp + '°C');
                     wind0.text('Wind: ' + weatherData.wind.speed + "MPH");
                     hum0.text('Humidity: ' + weatherData.main.humidity + '%');
 
+                    symbol1.attr('src', './icons/' + icon + '.png'); //loads the icon???
+                    temp1.text('Temp: ' + weatherData.main.temp + '°C');
+                    wind1.text('Wind: ' + weatherData.wind.speed + "MPH");
+                    hum1.text('Humidity: ' + weatherData.main.humidity + '%');
 
+                    symbol2.attr('src', './icons/' + icon + '.png'); //loads the icon???
+                    temp2.text('Temp: ' + weatherData.main.temp + '°C');
+                    wind2.text('Wind: ' + weatherData.wind.speed + "MPH");
+                    hum2.text('Humidity: ' + weatherData.main.humidity + '%');
 
+                    symbol3.attr('src', './icons/' + icon + '.png'); //loads the icon???
+                    temp3.text('Temp: ' + weatherData.main.temp + '°C');
+                    wind3.text('Wind: ' + weatherData.wind.speed + "MPH");
+                    hum3.text('Humidity: ' + weatherData.main.humidity + '%');
 
+                    symbol4.attr('src', './icons/' + icon + '.png'); //loads the icon???
+                    temp4.text('Temp: ' + weatherData.main.temp + '°C');
+                    wind4.text('Wind: ' + weatherData.wind.speed + "MPH");
+                    hum4.text('Humidity: ' + weatherData.main.humidity + '%');
+
+                    symbol5.attr('src', './icons/' + icon + '.png'); //loads the icon???
+                    temp5.text('Temp: ' + weatherData.main.temp + '°C');
+                    wind5.text('Wind: ' + weatherData.wind.speed + "MPH");
+                    hum5.text('Humidity: ' + weatherData.main.humidity + '%');
                 })
         })
 });
