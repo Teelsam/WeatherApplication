@@ -22,28 +22,34 @@
 
     <main>
       <section class="locationPicker">
+        <!--User searches location-->
         <form id="myForm">
           Location:
           <input placeholder=" Place name" id="subLoc" />
           <button class="formBtn" id="confirmBtn">Get Weather</button>
         </form>
+        <!--Location is displayed-->
         <p id="locCheck">city</p>
-        <p id="time"></p>
+        <!-- <p id="time"></p> -->
       </section>
 
       <section class="buttonContainer">
-        <section id="buttons">
-          <h5>Search History:</h5>
-        </section>
-        <section class="weatherDisplay">
-          <section class="container">
-            <section class="row">
-              <section class="col" id="date1">date1</section>
-              
-              <section class="col" id="date2">date2</section>
-              <section class="col" id="date3">date3</section>
-              <section class="col" id="date4">date4</section>
-              <section class="col" id="date5">date5</section>
+        <!--Searched places buttons-->
+        <section id="buttons"></section>
+        <h5>Search History:</h5>
+      </section>
+
+      <section class="weatherDisplay">
+        <section class="container">
+          <section class="row">
+            <section class="col" id="bigWeather">
+              <h5 id="bigDate"></h5>
+              <ul class="weatherList">
+                <li id="symbol0"></li>
+                <li id="temp0"></li>
+                <li id="wind0"></li>
+                <li id="hum0"></li>
+              </ul>
             </section>
           </section>
         </section>

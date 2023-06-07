@@ -45,14 +45,19 @@ form{
 .styled:hover{
     background-color:gold;
 }
+
 .container{
     background-color: darkslategrey;
     color:white;
 
 }
-#date1,#date2,#date3,#date4,#date5 {
+#bigWeather {
     border:solid;
     border-color: black;
+}
+#bigDate{
     text-align: center;
 }
-
+.weatherList{
+    list-style: none;
+}

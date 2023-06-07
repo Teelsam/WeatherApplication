@@ -7,12 +7,34 @@ $(function () {
     var town1 = $('#town1');
     var counter = 0;
     var town = localStorage.getItem('placeName', placeName);
+    var bigWeather = $('#bigWeather');
+    var bigDate = $('#bigDate');
+    var symbol0 = $('symbol0');
+    var temp0 = $('#temp0');
+    var wind0 = $('#wind0');
+    var hum0 = $('#hum0');
+    var temp1 = $('#temp0');
+    var wind1 = $('#wind0');
+    var hum1 = $('#hum0');
+    var temp2 = $('#temp0');
+    var wind2 = $('#wind0');
+    var hum2 = $('#hum0');
+    var temp3 = $('#temp0');
+    var wind3 = $('#wind0');
+    var hum3 = $('#hum0');
+    var temp4 = $('#temp0');
+    var wind4 = $('#wind0');
+    var hum4 = $('#hum0');
+    var temp5 = $('#temp0');
+    var wind5 = $('#wind0');
+    var hum5 = $('#hum0');
     var date1 = $('#date1');
     var date2 = $('#date2');
     var date3 = $('#date3');
     var date4 = $('#date4');
     var date5 = $('#date5');
-    var time = dayjs().format("MMM DD,");
+    var time = dayjs().format("MMM DD");
+    var fullTime = dayjs().format('MMM DD, YYYY');
     var displayTime = $('#time');
 
     confirmBtn.on('click', function (event) { //stores searched location
@@ -36,7 +58,7 @@ $(function () {
         var town = localStorage.getItem('placeName', placeName);
         console.log('town: ' + town);
         printName.empty();//removes previous name
-        printName.text(town + " " + time);//names city from storage
+        printName.text(town);//names city from storage
 
     }
     printSelected();//calls naming function
@@ -67,14 +89,20 @@ $(function () {
             console.log(locationData);
             var lon = locationData[0].lon;
 
-            var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + town + '&appid=' + APIKey;
+            var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + town + '&units=metric&appid=' + APIKey;
 
             fetch(queryURL)
                 .then(function (response) { return response.json(); })
                 .then(function (weatherData) {
                     console.log(weatherData);
-                    date1.text(time);
-                    date2.text(time)
+                    bigDate.text(town + ', ' + fullTime);
+                    symbol0.text
+                    temp0.text('Temp: ' + weatherData.main.temp + '°C');
+                    wind0.text('Wind: ' + weatherData.wind.speed + "MPH");
+                    hum0.text('Humidity: ' + weatherData.main.humidity + '%');
+
+
+
 
                 })
         })
