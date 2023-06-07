@@ -96,7 +96,7 @@ $(function () {
                 .then(function (weatherData) {
                     console.log(weatherData);
                     bigDate.text(town + ', ' + fullTime);
-                    symbol0.text
+                    symbol0.text(weatherData.weather.icon);
                     temp0.text('Temp: ' + weatherData.main.temp + '°C');
                     wind0.text('Wind: ' + weatherData.wind.speed + "MPH");
                     hum0.text('Humidity: ' + weatherData.main.humidity + '%');

@@ -54,6 +54,7 @@ form{
 #bigWeather {
     border:solid;
     border-color: black;
+    text-align: center;
 }
 #bigDate{
     text-align: center;
