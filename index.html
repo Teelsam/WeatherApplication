@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--site metadata and title-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World Wide Weather</title>
@@ -17,9 +18,9 @@
   </head>
   <body>
     <header>
+      <!--site header-->
       <h1 id="siteH1">☀️ Weather App 🌂</h1>
     </header>
-
     <main>
       <section class="locationPicker">
         <!--User searches location-->
@@ -28,12 +29,11 @@
           <input placeholder=" Place name" id="subLoc" />
           <button class="formBtn" id="confirmBtn">Get Weather</button>
         </form>
-
+        <!--user searches a seconds city-->
         <form id ="secondForm">
           <input placeholder="Another City" id="secLoc"/>
           <button class ='formBtn' id="confirmBtn2">Add city</button>
         </form>
-
         <!--Location is displayed-->
         <p id="locCheck">city</p>
       </section>
@@ -47,6 +47,7 @@
       </section>
 
       <section class="weatherDisplay">
+        <!--main weatherpanel-->
         <section class="container">
           <section class="row">
             <section class="col" id="bigWeather">
@@ -66,6 +67,7 @@
         <section class="5-day">
           <section class="container">
             <section class="row">
+              <!--Day 1-->
               <section class="col" id="date1">
                 <h6 id="dateHead1"></h6>
                 <li id="weatherIcon">
@@ -76,6 +78,7 @@
                 <li id="hum1"></li>
               </ul>
               </section>
+              <!--Day 2-->
               <section class="col" id="date2">
                 <h6 id="dateHead2"></h6>
                 <li id="weatherIcon">
@@ -86,6 +89,7 @@
                 <li id="hum2"></li>
               </ul>
               </section>
+              <!--Day 3-->
               <section class="col" id="date3">
                 <h6 id="dateHead3"></h6>
                 <li id="weatherIcon">
@@ -96,6 +100,7 @@
                 <li id="hum3"></li>
               </ul>
               </section>
+              <!--Day 4-->
               <section class="col" id="date4">
                 <h6 id="dateHead4"></h6>
                 <li id="weatherIcon">
@@ -106,6 +111,7 @@
                 <li id="hum4"></li>
               </ul>
               </section>
+              <!--Day 5-->
               <section class="col" id="date5">
                 <h6 id="dateHead5"></h6>
                 <li id="weatherIcon">

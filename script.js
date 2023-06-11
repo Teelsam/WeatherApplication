@@ -71,7 +71,6 @@ $(function () {
         console.log('town: ' + town);
         printName.empty();//removes previous name
         printName.text(town);//names city from storage
-
     }
     confirmBtn2.on('click', function (event) {
         event.preventDefault();
@@ -109,7 +108,6 @@ $(function () {
                 var lat = locationData[0].lat;
                 console.log(locationData);
                 var lon = locationData[0].lon;
-
                 var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + town + '&units=metric&appid=' + APIKey;
                 //This is todays weather
                 fetch(queryURL)
@@ -119,12 +117,12 @@ $(function () {
                         console.log(weatherData);
                         bigDate.text(town + ', ' + fullTime);
                         var icon = (weatherData.weather[0].icon);
+                        symbol0.attr("src", "./icons/" + icon + ".png");//loads the icon
+                        temp0.text('Temp: ' + weatherData.main.temp + '°C');//loads temp
+                        wind0.text('Wind: ' + weatherData.wind.speed + "MPH");//loads windspeed
+                        hum0.text('Humidity: ' + weatherData.main.humidity + '%');//loads humidity
 
-                        symbol0.attr("src", "./icons/" + icon + ".png");
-                        temp0.text('Temp: ' + weatherData.main.temp + '°C');
-                        wind0.text('Wind: ' + weatherData.wind.speed + "MPH");
-                        hum0.text('Humidity: ' + weatherData.main.humidity + '%');
-
+                        // this is the five-day forecast
                         var forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&units=metric&appid=' + APIKey;
                         fetch(forecastURL)
                             .then(function (response) { return response.json(); })
@@ -136,33 +134,33 @@ $(function () {
 
                                 dateHead1.text(forecastData.list[7].dt_txt);
                                 symbol1.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon
-                                temp1.text('Temp: ' + forecastData.list[7].main.temp + '°C');
-                                wind1.text('Wind: ' + forecastData.list[7].wind.speed + "MPH");
-                                hum1.text('Humidity: ' + forecastData.list[7].main.humidity + '%');
+                                temp1.text('Temp: ' + forecastData.list[7].main.temp + '°C');//loads temp
+                                wind1.text('Wind: ' + forecastData.list[7].wind.speed + "MPH");//loads windspeed
+                                hum1.text('Humidity: ' + forecastData.list[7].main.humidity + '%');//loads humidity
 
                                 dateHead2.text(forecastData.list[15].dt_txt);
-                                symbol2.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon???
-                                temp2.text('Temp: ' + forecastData.list[15].main.temp + '°C');
-                                wind2.text('Wind: ' + forecastData.list[15].wind.speed + "MPH");
-                                hum2.text('Humidity: ' + forecastData.list[15].main.humidity + '%');
+                                symbol2.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon
+                                temp2.text('Temp: ' + forecastData.list[15].main.temp + '°C');//loads temp
+                                wind2.text('Wind: ' + forecastData.list[15].wind.speed + "MPH");//loads windspeed
+                                hum2.text('Humidity: ' + forecastData.list[15].main.humidity + '%');//loads humidity
 
                                 dateHead3.text(forecastData.list[23].dt_txt);
-                                symbol3.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon???
-                                temp3.text('Temp: ' + forecastData.list[23].main.temp + '°C');
-                                wind3.text('Wind: ' + forecastData.list[23].wind.speed + "MPH");
-                                hum3.text('Humidity: ' + forecastData.list[23].main.humidity + '%');
+                                symbol3.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon
+                                temp3.text('Temp: ' + forecastData.list[23].main.temp + '°C');//loads temp
+                                wind3.text('Wind: ' + forecastData.list[23].wind.speed + "MPH");//loads windspeed
+                                hum3.text('Humidity: ' + forecastData.list[23].main.humidity + '%');//loads humidity
 
                                 dateHead4.text(forecastData.list[31].dt_txt);
-                                symbol4.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon???
-                                temp4.text('Temp: ' + forecastData.list[31].main.temp + '°C');
-                                wind4.text('Wind: ' + forecastData.list[31].wind.speed + "MPH");
-                                hum4.text('Humidity: ' + forecastData.list[31].main.humidity + '%');
+                                symbol4.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon
+                                temp4.text('Temp: ' + forecastData.list[31].main.temp + '°C');//loads temp
+                                wind4.text('Wind: ' + forecastData.list[31].wind.speed + "MPH");//loads windspeed
+                                hum4.text('Humidity: ' + forecastData.list[31].main.humidity + '%');//loads humidity
 
                                 dateHead5.text(forecastData.list[39].dt_txt);
-                                symbol5.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon???
-                                temp5.text('Temp: ' + forecastData.list[39].main.temp + '°C');
-                                wind5.text('Wind: ' + forecastData.list[39].wind.speed + "MPH");
-                                hum5.text('Humidity: ' + forecastData.list[39].main.humidity + '%');
+                                symbol5.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon
+                                temp5.text('Temp: ' + forecastData.list[39].main.temp + '°C');//loads temp
+                                wind5.text('Wind: ' + forecastData.list[39].wind.speed + "MPH");//loads windspeed
+                                hum5.text('Humidity: ' + forecastData.list[39].main.humidity + '%');//loads humidity
                             })
                     })
             });
