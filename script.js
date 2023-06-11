@@ -3,7 +3,6 @@ $(function () {
     var confirmBtn = $('#confirmBtn');
     var placeName = inputEl.textContent;
     var inputAddCity = $('#secLoc');
-    var confirmBtn2 = $('confirmBtn2');
     var firstSearch = inputAddCity.textContent;
     var printName = $('#locCheck');
     var askLoc = $('#askLoc');
@@ -72,31 +71,14 @@ $(function () {
         printName.empty();//removes previous name
         printName.text(town);//names city from storage
     }
-    confirmBtn2.on('click', function (event) {
-        event.preventDefault();
-        firstSearch = inputAddCity.val();
-        console.log('firstSearch:' + firstSearch);
-        localStorage.setItem('Search1', firstSearch);
-    })
+
     printSelected();//calls naming function
     var lastTown = localStorage.getItem('Search1', firstSearch);
     function searchHis() { //loads buttons of cities
         town1.text(lastTown);
-        // var newTown = $('<button>');//creates button element
-        // if (counter < 4) { //limits to 4 cities
-        //     newTown.text(town);
-        //     newTown.attr('class', 'styled');
-        //     newTown.attr('id', 'town1');
-        //     townUI.append(newTown);
-        //     counter++;
-        // }
+
     }
-    town1.on('click', function () {
-        printName.empty();//removes previous name
-        printName.text(lastTown);//names city from storage
-        weatherFetch(lastTown);
-        console.log('town1clicked');
-    });
+
     searchHis();
     weatherFetch();
     function weatherFetch() {
@@ -105,9 +87,9 @@ $(function () {
         fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + town + '&limit=5&appid=' + APIKey)
             .then(function (response) { return response.json() })
             .then(function (locationData) {
-                var lat = locationData[0].lat;
+                var lat = locationData[0].lat; //lattitude of city
                 console.log(locationData);
-                var lon = locationData[0].lon;
+                var lon = locationData[0].lon; // longitude of city
                 var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + town + '&units=metric&appid=' + APIKey;
                 //This is todays weather
                 fetch(queryURL)
@@ -130,7 +112,7 @@ $(function () {
                                 console.log('Forecast below: ');
                                 console.log(forecastData);
 
-                                var forecastIcon = (forecastData.list[7].weather[0].icon);
+                                var forecastIcon = (forecastData.list[7].weather[0].icon);//loads icon name to search our icon folder
 
                                 dateHead1.text(forecastData.list[7].dt_txt);
                                 symbol1.attr('src', './icons/' + forecastIcon + '.png'); //loads the icon
