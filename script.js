@@ -84,7 +84,7 @@ $(function () {
     function weatherFetch() {
         console.log('town in fetch is set to: ' + town);
         var APIKey = 'a0a1f894d727c1a84e8a59473f677e27';
-        fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + town + '&limit=5&appid=' + APIKey)
+        fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + town + '&limit=5&appid=' + APIKey)
             .then(function (response) { return response.json() })
             .then(function (locationData) {
                 var lat = locationData[0].lat; //lattitude of city
