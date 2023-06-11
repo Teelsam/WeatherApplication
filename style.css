@@ -1,5 +1,5 @@
 
-#siteH1{
+#siteH1{ /*sites heading*/
     display: flex;
     text-align: center;
    justify-content: center;
@@ -8,13 +8,13 @@
    height: 100px;
    padding-top: 50px;
 }
-form{
+form{/*positions search bar*/
     display: inline;
 }
-#myForm{
+#myForm{/* sets the margin for the form*/
     margin-left: 5px;
 }
-#locCheck{
+#locCheck{/*positions and designs the current location section*/
     background-color: darkgreen;
     color:white;
     font-size: larger;
@@ -24,38 +24,38 @@ form{
     height: 50px;
     border: 3px;
 }
-.formBtn{
+.formBtn{/*Designs the search button*/
     margin-top: -10px;
     display: inline;
     background-color: aquamarine;
     border-radius: 5px;
 }
-.formBtn:hover{
+.formBtn:hover{/*Designs the search button*/
     background-color: gold;
 }
-.styled{
+.styled{/*Styles created buttons*/
     margin-top: -10px;
     display: inline;
     background-color:burlywood;
     border-radius: 5px;
 }
-.styled:hover{
+.styled:hover{/*Styles created buttons*/
     background-color:gold;
 }
 
-.container{
+.container{/*styles the weather panels*/
     background-color: darkslategrey;
     color:white;
 
 }
-#bigWeather {
+#bigWeather { /*styles border of weather panels*/
     border:solid;
     border-color: black;
     text-align: center;
 }
-#bigDate{
+#bigDate{ /*Styles the current weather infos date*/
     text-align: center;
 }
-li{
+li{ /*removes lists bullet points*/
     list-style: none;
 }
