@@ -17,31 +17,31 @@ $(function () {
     var temp0 = $('#temp0');
     var wind0 = $('#wind0');
     var hum0 = $('#hum0');
-
+    //Here we pull structures from index to load weather panels 
     var dateHead1 = $('#dateHead1');
     var symbol1 = $('#symbol1');
     var temp1 = $('#temp1');
     var wind1 = $('#wind1');
     var hum1 = $('#hum1');
-
+    //Here we pull structures from index to load weather panels 
     var dateHead2 = $('#dateHead2');
     var symbol2 = $('#symbol2');
     var temp2 = $('#temp2');
     var wind2 = $('#wind2');
     var hum2 = $('#hum2');
-
+    //Here we pull structures from index to load weather panels 
     var dateHead3 = $('#dateHead3');
     var symbol3 = $('#symbol3');
     var temp3 = $('#temp3');
     var wind3 = $('#wind3');
     var hum3 = $('#hum3');
-
+    //Here we pull structures from index to load weather panels 
     var dateHead4 = $('#dateHead4');
     var symbol4 = $('#symbol4');
     var temp4 = $('#temp4');
     var wind4 = $('#wind4');
     var hum4 = $('#hum4');
-
+    //Here we pull structures from index to load weather panels 
     var dateHead5 = $('#dateHead5');
     var symbol5 = $('#symbol5');
     var temp5 = $('#temp5');
